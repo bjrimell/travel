@@ -1,4 +1,4 @@
-MEAN QuickStart Instructions (MAC OSX)
+# MEAN QuickStart Instructions (MAC OSX)
 
 
 
@@ -67,4 +67,3 @@ These are additional notes and explanations to assist with the very good instruc
 - Having created these two controllers, we also want to create a service. Create a directory at public/js/services and n that location create a new file called NerdService.js
 - The NerdService  can be setup to get Nerd data from the DB by calling the API endpoint we setup earlier at /api/nerds, when we created the routing.js file. We can also tell it to be used to delete Nerd data, or to create a new one. It is a service file that we can rely on to talk with the database layer.
 - As it stands, the only thing close to working so far, using what we have now setup in the nerd service, is the Get function, because we have setup a route for that. We haven't setup any routing for the other functionality anywhere.
-- 
