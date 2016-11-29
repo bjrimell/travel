@@ -1,8 +1,8 @@
 # MEAN QuickStart Instructions (MAC OSX)
 
-
-
 These are additional notes and explanations to assist with the very good instructions at https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
+
+# Backend Setup
 
 - Create a new folder with project name
 - In that folder, create a file called package.json containing your list of project dependencies e.g.
