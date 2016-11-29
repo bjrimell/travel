@@ -22,6 +22,7 @@ These are additional notes and explanations to assist with the very good instruc
 - Check that the dependencies you've stated have now been downloaded and appear in a node_modules folder. Easy!
 - Create a server.js file in the same parent directory. This is the Node Application itself, in which you instantiate the app,  determine ports, determine DB connection, define routes, and set certain parameters such as what the location of the static files will be.
 
+# Mongo DB Setup
 - Install Homebrew on MAC by running the following command in the terminal: 
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 - Ensure Homebrew is up to date by running the following command: brew update
@@ -38,7 +39,7 @@ These are additional notes and explanations to assist with the very good instruc
 - The app folder that has been created can be used in future for setting up other models, controllers, routes, and any other Node backend stuff required.
 - Add another file in app called routes.js. This file contains the definitions for routes that we will be using in our app, and specifically at the moment for the CRUD operations and a default route for all other requests. For example, if an API GET endpoint at <application_web_address>/api/nerds should retrieve all nerds from the database, we need to tell our app exactly what to do when that address is visited. Routing is a common aspect of modern web dev which can and should be understood before progressing further.
 - The backend is now setup and ready to be used. We just need to create a very simple view to test what we've done out. Create a new directory at public/views.
-- Create a file at the above location called index.html and use basic HTML to show some Hello World text.
+- Create a file in the above directory called index.html and use basic HTML to show some Hello World text.
 - In a terminal window, type the following command to start node: node server.js
 - This starts the application as defined in server.js (i.e. to use the 4 modules express, app, bodyParser, methodOverride, and to initiate the db connection etc.)
 - Test this has worked by visiting http://localhost:8080 in your web browser. You should see your back HTML view displayed. The reason this view is displayed is because in our routes.js file we have determined that the default thing to do when an undefined url is hit is to open index.html (app.get('*'))
@@ -67,3 +68,9 @@ These are additional notes and explanations to assist with the very good instruc
 - Having created these two controllers, we also want to create a service. Create a directory at public/js/services and n that location create a new file called NerdService.js
 - The NerdService  can be setup to get Nerd data from the DB by calling the API endpoint we setup earlier at /api/nerds, when we created the routing.js file. We can also tell it to be used to delete Nerd data, or to create a new one. It is a service file that we can rely on to talk with the database layer.
 - As it stands, the only thing close to working so far, using what we have now setup in the nerd service, is the Get function, because we have setup a route for that. We haven't setup any routing for the other functionality anywhere.
+- Now add a new public/index.html file and have it include references to the front-end resources pulled down from Bower. e.g. <script src="libs/angular/angular.min.js"></script> and also the Controllers and Services created in the preceding steps. e.g. <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/NerdCtrl.js"></script>
+    <script src="js/services/NerdService.js"></script>
+- Also in the index.html file refer to the new Angular app and controller in the body HTML tag. e.g. <body ng-app="sampleApp" ng-controller="NerdController"> and insert the <div ng-view></div> where views can be injected. 
+- Create any HTML files that will be injected into the ng-view defined int he step above.
+- Create a new Angular App app.js file at public/js in which you define all the components, controllers, and services to be used
