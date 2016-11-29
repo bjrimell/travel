@@ -2,14 +2,7 @@
 a basic mean stack app
 MEAN QuickStart Instructions (MAC OSX)
 
-
-
-MEAN QuickStart Instructions (MAC OSX)
-
-git push -u origin master
-
-
-
+# backend setup
 - Create a new folder with project name
 - In that folder, create a file called package.json containing your list of project dependencies e.g.
 
@@ -49,3 +42,5 @@ git push -u origin master
 - This starts the application as defined in server.js (i.e. to use the 4 modules express, app, bodyParser, methodOverride, and to initiate the db connection etc.)
 - Test this has worked by visiting http://localhost:8080 in your web browser. You should see your back HTML view displayed. The reason this view is displayed is because in our routes.js file we have determined that the default thing to do when an undefined url is hit is to open index.html (app.get('*'))
 - Our backend setup work is now complete! We are using Node running locally  as a web server to serve up an HTML page as a website.
+
+# frontend setup
