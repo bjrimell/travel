@@ -1,8 +1,9 @@
-# meany
-a basic mean stack app
 MEAN QuickStart Instructions (MAC OSX)
 
-# backend setup
+
+
+These are additional notes and explanations to assist with the very good instructions at https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
+
 - Create a new folder with project name
 - In that folder, create a file called package.json containing your list of project dependencies e.g.
 
@@ -43,4 +44,27 @@ MEAN QuickStart Instructions (MAC OSX)
 - Test this has worked by visiting http://localhost:8080 in your web browser. You should see your back HTML view displayed. The reason this view is displayed is because in our routes.js file we have determined that the default thing to do when an undefined url is hit is to open index.html (app.get('*'))
 - Our backend setup work is now complete! We are using Node running locally  as a web server to serve up an HTML page as a website.
 
-# frontend setup
+# Front End Setup
+
+- We will use Bower to grab the utilities we need.
+- Install Bower globally using NPM (that we installed earlier) by running the following command: sudo npm install -g bower. The -g ensures it is installed for use globally and not just where you have run this command from.
+- When we use Bower within our new app, we want to define what tools/components/software we want, and also where they will be installed. To do this, we create a new file at the top level called .bowerrc and another one called bower.json
+- In .bowerrc we define the installation location and in bower.json we state the things we want to install, in a very similar fashion to the packages.json file created and used earlier. Examples of things we might want to install are FontAwesome, Bootstrap, Angular, custom CSS files etc. e.g.:
+- {
+    "name": "starter-node-angular",
+    "version": "1.0.0",
+    "dependencies": {
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "animate.css": "latest",
+        "angular": "latest",
+        "angular-route": "latest"   
+    }
+}
+- Now you have defined what you want and where you want it, open a new terminal window in the root of your application and type the following command: bower install
+- Observe that the terminal will use bower to pull down from the web all the files you have listed in your bower.json file. Also check that they are installed in the directory you defined in .bowerrc
+- Now we are moving onto the AngularJS world. Create two files called MainCtrl.js and NerdCtrl.js at public/js/controllers
+- Having created these two controllers, we also want to create a service. Create a directory at public/js/services and n that location create a new file called NerdService.js
+- The NerdService  can be setup to get Nerd data from the DB by calling the API endpoint we setup earlier at /api/nerds, when we created the routing.js file. We can also tell it to be used to delete Nerd data, or to create a new one. It is a service file that we can rely on to talk with the database layer.
+- As it stands, the only thing close to working so far, using what we have now setup in the nerd service, is the Get function, because we have setup a route for that. We haven't setup any routing for the other functionality anywhere.
+- 
