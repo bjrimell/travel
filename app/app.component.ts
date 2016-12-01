@@ -1,15 +1,27 @@
 import { Component } from '@angular/core';
+import { User } from './shared/models/user';
 
 @Component({
   selector: 'my-app',
-  template: `
-    <div class="jumbotron">
-      <h1>Welcome to Our Angular2 App!</h1>
-      <h3>This is a basic starting point for a new project.</h3>
-    </div>
-  `,
-  styles: [`
-    .jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }
-  `]
+  templateUrl: './app/app.component.html',
+  styleUrls: ['./app/app.component.css']
 })
-export class AppComponent {}
+export class AppComponent {
+  headline: string = 'Angular 2 Demo!';
+  subtitle: string = 'Please select a user from the menu on the left.'; 
+  users: User[] = [
+    { id: 25, name: 'Barry', username: 'bjrimell' },
+    { id: 26, name: 'Carolina', username: 'KaroHuds' },
+    { id: 27, name: 'Homer', username: 'hoju' }
+  ];
+  activeUser: User;
+
+  selectUser(user) {
+    this.activeUser = user;
+    console.log(this.activeUser);
+  }
+
+  onUserCreated(event) {
+    this.users.push(event.user);
+  }
+}

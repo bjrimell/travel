@@ -1,4 +1,4 @@
-# MEAN QuickStart Instructions (MAC OSX)
+# Angular2 with MEAN stack QuickStart Instructions (MAC OSX)
 
 These are additional notes and explanations to assist with the very good instructions at https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
 

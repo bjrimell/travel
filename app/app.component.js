@@ -5,17 +5,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
+        this.headline = 'Angular 2 Demo!';
+        this.subtitle = 'Please select a user from the menu on the left.';
+        this.users = [
+            { id: 25, name: 'Barry', username: 'bjrimell' },
+            { id: 26, name: 'Carolina', username: 'KaroHuds' },
+            { id: 27, name: 'Homer', username: 'hoju' }
+        ];
     }
+    AppComponent.prototype.selectUser = function (user) {
+        this.activeUser = user;
+        console.log(this.activeUser);
+    };
+    AppComponent.prototype.onUserCreated = function (event) {
+        this.users.push(event.user);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <div class=\"jumbotron\">\n      <h1>Welcome to Our Angular2 App!</h1>\n      <h3>This is a basic starting point for a new project.</h3>\n    </div>\n  ",
-            styles: ["\n    .jumbotron { box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); }\n  "]
-        })
+            templateUrl: './app/app.component.html',
+            styleUrls: ['./app/app.component.css']
+        }), 
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+//# sourceMappingURL=app.component.js.map
